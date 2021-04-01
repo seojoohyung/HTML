@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>JQUERY 기본</title>
+	<script type="text/javascript" src="../../js/jquery-3.6.0.js"></script>
+	
+	<script type="text/javascript">
+	$(document).ready(function(){
+		$("body").css("background-color", "yellow");
+		$("h1").css("color", "blue");
+		$(".sample").css("color", "green");
+		$("#tmp").css("color", "red");
+		
+		//문서가 로딩(document ready)되고 나서
+		//h2 요소에 클릭 이벤트 설정 해주기
+		$("h2").click(function(){
+			//$("h2").hide(); //이렇게 하면 h2태그가 전부 사라짐
+			$(this).hide();
+			//클릭 이벤트가 발생한 객체만 숨김!(내가 선택한 h2태그)만 사라지게 하고 싶으면 this를 사용
+		});
+		
+	});
+	
+	function hide(){
+		$("h1").hide();
+	}
+	</script>
+</head>
+<body>
+	<h1 onclick="hide();">JQuery 테스트</h1>
+	<h2 class="sample">JQuery 테스트</h2>
+	<h2 id="tmp">JQuery 테스트</h2>
+	<h2 title="내맘">JQuery 테스트</h2>
+	<h2 title="니맘">JQuery 테스트</h2>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>JQUERY 기본</title>
+	<script type="text/javascript" src="../../js/jquery-3.6.0.js"></script>
+	<script type="text/javascript">
+
+	$(document).ready(function(){
+		alert(1);
+	});
+	</script>
+</head>
+<body>
+	<h1>JQuery 테스트</h1>
+</body>
+<script type="text/javascript">
+
+//자바스크립트
+var list = document.getElementsByTagName("h1");
+list[0].style.backgroundColor = "yellow";
+list[0].style.color = "blue";
+
+//JQuery
+//$("h1") // ==>document.getElementsByTagName("h1")
+var obj = $("h1");
+obj.css("background-color", "gray"); 
+obj.css("color", "white");
+
+//메소드 체이닝
+obj.css("background-color", "gray").css("color", "white"); //이렇게 사용 가능
+
+$(function()){ //선택자 selector를 사용하지 않고도 사용 가능하다.
+	alert(2);
+}
+</script>
+</html>
