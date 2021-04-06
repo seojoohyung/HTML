@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script type="text/javascript" src="../../js/jquery-3.6.0.js"></script>
+	<script type="text/javascript">
+		var obj = {
+				name: "홍길동"
+				, birth: "1425-12-14"
+				, age: 30
+				, hobby: ["무술", "검술", "독서"]
+				, address: {
+					city: "대전광역시"
+					, gu: "중구"
+					, dong: "대흥동"
+				}//"대전광역시 중구 대흥동"
+		}
+		/*
+		obj.name ==> "홍길동"
+		obj.hobby ==> ["무술","검술","독서"]
+		obj.address ==> object
+		obj.address.dong ==> "대흥동"
+		*/
+		$(document).ready(function(){
+			$("button").click(function(){
+				// 1) 1차변환(obj > str)
+				// object를 string으로 변환하기 - JSON.stringify(obj)
+				var strTmp = JSON.stringify(obj);
+				$("#spanFirst").text(strTmp);
+				
+				// 2) 2차변환(str > obj)
+				// string을 object로 변환하기 - JSON.parse(str);
+				var objTmp = JSON.parse(strTmp);
+				$("#spanSecond").text(objTmp);
+				
+				// .html()이 아닌 .text()로 표시할 것~
+				
+				// 3) 나머지 표시해주기
+				// 이름
+// 				$("#name").html(objTmp.name);
+				$("#name").text(objTmp.name);
+				// 주소 - address
+				$("#address").text(objTmp.address.city + " " + objTmp.address.gu + " " + objTmp.address.dong);
+				// 취미 - hobby
+// 				$("#hobby").text(objTmp.hobby);
+				var strHobby = "";
+				for(var i=0 ; i<objTmp.hobby.length ; i++) {
+					strHobby += "(" + objTmp.hobby[i] + "), ";
+				}
+				strHobby = strHobby.substr(0, strHobby.length-2);
+				$("#hobby").text(strHobby);
+				
+				// 생년월일 - birthday
+// 				$("#birthday").text(objTmp.birth);
+				var date = new Date(objTmp.birth);
+				$("#birthday").text(date);
+				
+			});
+			
+		});
+		
+	</script>
+</head>
+<body>
+	<button type="button">JSON 변환</button>
+	<p>
+		1차변환(obj > str) : <span id="spanFirst"></span>
+	</p>
+	<p>
+		2차변환(str > obj) : <span id="spanSecond"></span>
+	</p>
+	<p>
+		이름 : <span id="name"></span>
+	</p>
+	<p>
+		주소 : <span id="address"></span>
+	</p>
+	<p>
+		취미 : <span id="hobby"></span>
+	</p>
+	<p>
+		생년월일 : <span id="birthday"></span>
+	</p>
+
+</body>
+</html>

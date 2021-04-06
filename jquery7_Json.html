@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<style type="text/css">
+		div{
+			border: 1px solid ;
+			padding: 10px;
+		}
+	</style>
+	<script type="text/javascript" src="../../js/jquery-3.6.0.js"></script>
+	<script type="text/javascript">
+		var obj ={
+				name :"홍길동"
+				, birth: "1425-12-14"
+				, age: 30
+				, hobby: ["무술","검술","독서"]
+				, address: {
+					city: "대전광역시"
+					, gu: "중구 " 
+					, dong: "대흥동"}
+		}
+		
+// 		obj.name ==> "홍길동"
+// 		obj.hobby ==> ["무술","검술","독서"]
+// 		onj.address ==> object
+// 		onj.address.dong ==> "대흥동"
+		
+		
+		
+		$(document).ready(function(){
+			$("button").click(function() {
+				//1차변환  obj> str)
+				//objectㅡㄹ string으로 변환한기 JSON.stringify(obj)
+				 var strTmp = JSON.stringify(obj);
+				$("#1").text(strTmp);
+				
+				//2차변환  str> obj)
+				//string을 object로 변환 JSON parse(str)
+				var objTmp =JSON.parse(strTmp);
+				$("#2").text(objTmp);
+				
+				//html이 아닌 text로 표시핳것
+				
+				//3) 나머지 표시해 주기
+				$("#name").text(objTmp.name);
+				//주소
+				$("#addr").text(objTmp.address.city + " " + objTmp.address.gu + objTmp.address.dong + " ");
+				//취미
+// 				$("#hobby").text(objTmp.hobby); //html로 작성하면 붙어서 나온다 
+					var strHobby= "";
+					for(var i=0; i<objTmp.hobby.length ; i++){
+						strHobby += objTmp.hobby[i] + " ,";
+					}
+					strHobby = strHobby.substr(0, strHobby.length -2);
+					$("#hobby").text(strHobby);
+					
+					
+					
+				//생일
+// 				$("#bir").text(objTmp.birth);
+				var date = new Date(objTmp.birth);
+				$("#bir").text(date);
+				
+			});
+		});
+	</script>
+</head>
+<body>
+	<div>
+		<button type="button"> JSON 변환 테스트</button>
+		<p >1차 변환(obj>str):<span id="1"></span></p>
+		<p >2차 변환(str>obj):<span id="2"></span></p>
+		<p >이름: <span id="name"></span></p>
+		<p >주소:<span id="addr"></span></p>
+		<p >취미:<span id="hobby"></span></p>
+		<p >생년월일:<span id="bir"></span></p>
+	</div>
+</body>
+</html>
