@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../../js/jquery-3.6.0.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("p[title |='툴립으로 보입니다.']").css("background-color","yellow");
+		//$("input[type |='password'").css("border","solid 3px red");
+		$("[type='password']").css("border","solid 3px red");
+	});
+</script>
+</head>
+<body>
+	<p>일반 문단입니다.</p>
+	<p title="툴립으로 보입니다.">
+		타이틀을 가지고 있는 문단입니다.
+	</p>
+	<input type="text">회원번호
+	<input type="password">비밀번호
+</body>
+</html>

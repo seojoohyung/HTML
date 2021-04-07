@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script src="../../js/jquery-3.6.0.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			//h2의 자식 a태그에 테두리 설정
+			$("h2>a").css("border", "1px solid red");
+			//h2의 후손 a태그에 배경색 설정
+			$("h2 a").css("background-color", "yellow");
+			//h2의 손자 a태그에 글자색 설정
+			$("h2>>a").css("color", "green");
+		});
+	</script>
+</head>
+<body>
+	<h2>
+		문단 안에 <a>링크</a> 태그가 있다.
+		<span>두번째 <a>링크</a>는 손자이다.</span>
+	</h2>
+</body>
+</html>

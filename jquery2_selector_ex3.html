@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../../js/jquery-3.6.0.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("h3 ~ p").css("background-color","yellow");
+		$("h3 ~ p").css("width", "100");
+		$("h3 + p").css("font-weight", "bold");
+	});
+</script>
+</head>
+<body>
+	<p>형제 선택자에 대하여</p>
+	<h3>꼬마버스 타요 가족을 소개 합니다.</h3>
+	<p>타요</p>
+	<p>로기</p>
+	<p>라니</p>
+	<p>가니</p>
+</body>
+</html>
