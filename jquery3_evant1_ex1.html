@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<style type="text/css">
+	</style>
+	<script type="text/javascript" src="../../js/jquery-3.6.0.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			//바디를 클릭 했을떄 이벤트 명, 클릭요소 클릭한 위치 좌표, 클릭한 버튼 공유 종류를 메세지로 보여줭
+			$("body").click(function (e) {
+				//이벤트 명, 클릭요소 클릭한 위치 좌표, 클릭한 버튼 공유 종류를 메세지로 보여줭
+				var str = ""
+					+ "이벤트 종류 : " + e.type
+					+ "이벤트 발생 요소  : " + e.target
+					+ "클릭 좌표 X" + e.pagex 
+					+ "클릭 좌표 Y" + e.pageY
+					+ "클릭 좌표 X" + e.screenx 
+					+ "클릭 좌표 Y" + e.screenY
+					+ "클릭 버튼" + e.button;
+				
+				alert(str);
+			});
+		});
+	</script>
+</head>
+<body>
+	<div style="width: 300px;height:250px;background-color:#b9adef;">
+	
+	</div>
+	<br>
+	<button type="button" >버튼</button>
+</body>
+</html>

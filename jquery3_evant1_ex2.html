@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script src="../../js/jquery-3.6.0.js"></script>
+	<style type="text/css">
+		img {width: 100px; height: 80px;}
+/* 		button {display: none;} */
+	</style>
+	<script type="text/javascript">
+		// 초기 화면 설정
+		$(document).ready(function(){
+			$("a").click(function(e){
+				e.preventDefault();
+			});
+			
+			// 보이기 버튼 숨기기
+			$("button").css("display", "none");
+			
+			// 이미지에 마우스오버 - 다른 이미지 보이기
+			var orginSrc = "";
+			$("img").mouseover(function(e){
+				// case1) this 사용
+				//this ==> <img>
+				//this.src ==> "../../images/~"
+				
+				// case2) event 객체 사용
+				//e.target ==> <img>
+// 				console.log(e.target.src);
+				
+				// 마우스아웃 시 원래 이미지로 돌리기 위해서
+				orginSrc = e.target.src;
+				e.target.src = "../../images/sw_off.png";
+				
+			});
+			
+			// 이미지에 마우스아웃 - 원래 이미지 보이기
+			$("img").mouseout(function(e){
+				e.target.src = orginSrc;
+// 				orginSrc = "";
+			});
+			
+			// 이미지에 더블클릭 - 이미지 사라지기
+			$("img").dblclick(function(){
+				// case1) hide jq메소드 사용
+// 				$(this).hide();
+				// case2) css jq메소드 사용
+// 				$(this).css("display", "none");
+				// case3) js 사용
+				this.style.display = "none";
+				
+				// 이미지가 하나도 없으면 [이미지보이기]버튼이 나타나기
+				showBtn();
+				
+			});
+			
+			$("button").click(function(){
+				$("img").css("display", "inline");
+			});
+			
+			
+		});
+		
+		// 버튼 보여주기
+// 		function showBtn(){
+// 			//$("img").length 와 보이지 않는 이미지의 개수 비교
+// 			// 같으면 버튼 보이기
+			
+// 			var cnt = 0;//보이지 않는 이미지의 개수
+// 			$("img").each(function(idx, item){
+// 				console.log(item);
+// 				// item ==> <img>
+// 				//item.style.display
+// 				if($(item).css("display") == "none") cnt++;
+// 			});
+			
+// 			if($("img").length == cnt) {//보이지 않는 이미지의 개수와 이미지 개수가 같으면
+// 				$("button").css("display", "inline");
+// 			}
+			
+// 		}
+		function showBtn(){
+			var flag = false;
+			$("img").each(function(idx, item){
+// 				console.log(item);
+// 				console.log(">>>>>>>>>>>" + item.css("display"));
+				if($(item).css("display") != "none") {
+					flag = true;
+				}
+			});
+			
+			if(flag) return;
+			
+			$("button").css("display", "inline");
+		}
+	</script>
+</head>
+<body>
+	<img alt="" src="../../images/coffee1.jfif">
+	<img alt="" src="../../images/coffee2.jpg">
+	<img alt="" src="../../images/flowers.jpg">
+	<br>
+	<button type="button">이미지 보이기</button>
+	<br>
+	<a href="http://www.naver.com">네이버로 이동</a>
+<!-- 	<button type="button">이미지 보이기</button> -->
+<!-- 	<button type="button">이미지 보이기</button> -->
+</body>
+</html>

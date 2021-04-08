@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<style type="text/css">
+	</style>
+	<script type="text/javascript" src="../../js/jquery-3.6.0.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function(){	
+		$("p").click(function(){
+			alert("클릭했습니다");
+		});
+// 		$("p").mouseover();
+// 		$("p").mouseout();
+
+		$("p").on({
+			mouseover : function(){
+				//배경색 바꾸기
+// 				$("p").css("background-color", "yellow"); ==> p요소 전체를 css를 적용
+				$(this).css("background-color", "yellow");
+			}
+			,mouseout : function(){
+				//배경색 원래대로 바꾸기
+// 				$("p").css("background-color", ""); ==> p요소 전체를 css를 적용
+				$(this).css("background-color", "");
+				console.log(e);
+				console.log(e.type);
+				console.log(e.target);
+				console.log(e.button);
+			}
+		});
+	});
+		</script>
+</head>
+<body>
+	<h1 onclick="alert(1)">Jquery 이벤트</h1>
+	<p>이벤트를 넣어줄꼐요</p>
+	<p>나는</p>
+	<p>지금 당장</p>
+	<p>집을 가고 싶다</p>
+</body>
+</html>

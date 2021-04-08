@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script type="text/javascript" src="../../js/jquery-3.6.0.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function(){
+		$("body").mousemove(function(e){
+			var str = "pageX,Y: (" + e.pageX + ", " + e.pageY + ")"
+					+ " / screenX,Y: " + e.screenX + ", " + e.screenY;
+			$("div").html(str);
+			
+		});
+	});
+	
+	</script>
+</head>
+<body>
+	<div style="width: 300px; height: 200px; background-color: yellow;"></div>
+</body>
+</html>
