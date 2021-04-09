@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<style type="text/css">
+		div{
+			border: 14px solid yellow;
+			width: 300px;
+		
+		}
+		img.tmp{
+			width: 100px;
+			height: 100px;
+		}
+	</style>
+	<script type="text/javascript" src="../../js/jquery-3.6.0.js"></script>
+	<script type="text/javascript">
+			var imgRootPath = "../../images/";	
+	$(document).ready(function() {
+			$("p").click(function(){
+				
+				var fileName = $(this).attr("title")// $ p태그
+				var strAlt = $(this).text();
+				
+				
+				//이미지 만들어서 
+// 				//이미지 생성  case  1
+// 				var img = $("<img>"); //<img>
+// 				img.attr("src", imgRootPath + fileName); //<img>
+					
+// 				//이미지 생성  case  2
+				var img = $("<img>", {
+					"src" : imgRootPath + fileName
+					,"alt" : strAlt
+					,"class" :"tmp"
+				});
+				
+				
+
+				//p의 자식으로 추가
+				$(this).append(img);
+					
+// 				var addObj = $("<img src=../../images/1.PNG>");
+// 				$(this).append(addObj);
+			});
+		});
+	</script>
+</head>
+<body>
+	<div>
+		<p title="1.PNG">Celebrity</p>
+		<p title="2.PNG">23</p>
+		<p title="3.PNG">Modern times</p>
+		<p title="4.PNG">Coffee</p>
+	</div>
+</body>
+</html>

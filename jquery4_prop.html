@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<style type="text/css">
+	
+	</style>
+	<script type="text/javascript" src="../../js/jquery-3.6.0.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$("#chkAll").click(function() {
+				// 1)전체 선택 체크박스가 체크 되어 있는지 확인 
+				var isChecked = $(this).prop("checked")
+				// 2)전체 선택 체크박스가 체크 되어 있다면 
+				if(isChecked){
+					// 다른 체크박스 체크해주기 
+					$("[name=hobby]").prop("chekced",true);
+					//this ~
+				}else{
+					$("[name=hobby]").prop("chekced",false);
+					
+				}
+				// 3)전체 선택 체크박스가 체크 되어 있지 않다면   
+				
+				// 다른 체크박스 체크 해제 해주기 
+				
+			});
+			
+		});
+	</script>
+</head>
+<body>
+	<form>
+		체크박스: 
+		<input type="checkbox" checked="checked">
+		<br><br>
+		라디오:
+		<input type="radio" name="gender" id="genderMale" value="M"checked="checked">
+		<label for="genderMale">남자</label>
+		<input type="radio" name="gender" id="genderFemale" value="F">
+		<label for="genderFemale">여자</label>
+		<br><br>
+		<label id="sel">리스트박스:</label> 
+		<select id="sewl">
+			<option value= "0">--선택--</option>
+			<option value= "1">하나</option>
+			<option value= "2" selected="selected">둘</option>
+			<option value= "3">셋</option>
+		</select>
+		<br><br>
+		(readonly) :
+		<input type="text" >		
+		<br><br>
+		(disabled) :
+		<button type="button">실행</button>
+		<button type="button">attr확인</button>
+		<button type="button">prop확인</button>
+		<br><br>
+		<hr>
+		<br>
+		체크박스(전체선택/해제):
+		<br><br>
+		<input  type="checkbox" id="chkAll"name="hobby">
+		<label>전체선택</label>
+		<input type="checkbox" id="chk1"name="hobby">1
+		<input type="checkbox" id="chk2"name="hobby">2
+		<input type="checkbox" id="chk3"name="hobby">3
+		<input type="checkbox" id="chk4"name="hobby">4
+		<input type="checkbox" id="chk5"name="hobby">5
+		
+	</form>
+</body>
+</html>

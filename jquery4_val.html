@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<style type="text/css">
+	
+	</style>
+	<script type="text/javascript" src="../../js/jquery-3.6.0.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("#btnget").click(function(){ 
+// 				var userName = $("#userName").val(); //value값을 return;
+// 				alert(uesrName);
+				
+// 				var gender = $("[Name=gender]: checked").val(); //value값을 return;
+// 				alert(gender);
+				
+// 				var job = $("#job:ckecked").val(); //value값을 return;
+// 				alert(gender);
+
+				var str = ""
+						+ "이름  : " + $("#userName").val() +"\n"
+						+ "성별  : " + $("[Name=gender]: checked").val()  +"\n"
+						+ "소개  : " + $("#description").val() +"\n"
+						+ "직업  : " + $("#job").val();
+						
+ 				alert(str);
+ 				
+ 				
+			});
+			$("#btnset").click(function(){ 
+				$("#userName").val(function(){
+						prompt="바꿀 이름을 입력하세요";
+				}); 
+				
+			});
+		});
+	</script>
+</head>
+<body>
+	<form>
+		이름<input type="text" value="아이유" id="userName"><br>
+		성별
+		<input type="radio" name="gender" value="M" id="genderMale">
+		<label for="genderMale">남자</label>
+		<input type="radio" name="gender" value="F" id="genderFemale">
+		<label for="genderFemale">여자</label>
+		<br>
+		 소개 <textarea rows="3" cols="" id="description"></textarea>
+		 <br> <br>
+		직업<select id="job">
+			<option value="programmer">프로그래머</option>
+			<option value="white">백수</option>
+			<option value="train">HellTrain</option>
+<!-- 			<option value="A01">프로그래머</option> -->
+<!-- 			<option value="A02">백수</option> -->
+<!-- 			<option value="A03">HellTrain</option> -->
+		</select>
+		<br><br>
+		<button type="button" id="btnget">조사하기</button>
+		<button type="button" id="btnset">이름변경</button>
+	</form>
+</body>
+</html>

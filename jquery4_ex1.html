@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<style type="text/css">
+	
+	</style>
+	<script type="text/javascript" src="../../js/jquery-3.6.0.js"></script>
+	<script type="text/javascript">
+			$(document).ready(function(){
+					$("#btnSet").click(function(){
+// 						var str = $("img1").attr("src");
+// 						var arr = str.split("/");
+// 						var fileName = arr[arr.length -1];
+// 						$("img1").attr("title",fileName);
+// 						이미지의 갯수가 한정적일떄 쓸수 있다
+
+// 						case1) for문 사용
+// 						var objs = $("img");
+// 						fir(){
+// 						}
+
+						//case2) each() 사용
+							$("img").each(function(){
+						
+							var src = $(this).attr("src");
+							var arr = src.split("/");
+							var fileName = arr[arr.length -1];
+							$(this).attr("title", fileName);
+							
+							aler("title");
+						});
+						
+					});
+			});
+	</script>
+</head>
+<body>
+	<div>
+		<img id= "img1" alt="celebrity" src="../../images/1.PNG">
+		<img alt="꽃" src="../../images/flowers.jpg">
+		<img alt="23" src="../../images/2.PNG">
+		<img alt="꽃 두번째" src="../../images/flowers2.jpg">
+		<img alt="mordenTime" src="../../images/3.PNG">
+		<br>
+		<button id="btnSet" type="button"> 눌러보세용</button>
+	</div>
+</body>
+</html>
