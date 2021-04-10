@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<style type="text/css">
+	
+	</style>
+	<script type="text/javascript" src="../../js/jquery-3.6.0.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$("p").click(function() {
+				//부모가 div이면 alert() 추가
+				if($(this).parent(). is("div")){
+					alert("부모가 DIV 입니댜")
+				}
+			});
+		});
+	</script>
+</head>
+<body>
+	<p>클릭하세요 1</p>
+	<div>
+		<p>클릭하세요 2</p>
+	</div>
+</body>
+</html>
