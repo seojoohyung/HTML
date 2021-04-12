@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<style type="text/css">
+	
+	</style>
+	<script type="text/javascript" src="../../js/jquery-3.6.0.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$("li").click(function() {
+				$("li").first().css("background-color","yellow");
+// 				$("li:first").css("background-color","yellow");
+				$("li").last().css("background-color","yellow");
+// 				$("li:last").css("background-color","yellow");
+// 				$("li:eq(5)").css("background-color","red");
+				$("li").eq(5).css("background-color","red");
+// 				$("li:lt(4)").css("font-weight","bold");
+				$("li").slice(0,4).css("font-weight","bold");
+// 				$("li:gt(3)").css("font-size","0.5em");
+				$("li").slice(4).css("font-size","0.5em");
+				
+				//////////////////////////////////////////////
+				$("tr:even").css("background-clor","yellow");
+				$("tr:odd").css("background-clor","#b9adef");
+// 				$("tr").first().css("background-color","#000000").css("color","#ffffff");
+				$("tr").first().css({
+					"background-color","#000000"
+					
+				});
+				
+			});
+		});
+	</script>
+</head>
+<body>
+	<ul>
+		<li>one</li>
+		<li>two</li>
+		<li>three</li>
+		<li>four</li>
+		<li>five</li>
+		<li>six</li>
+		<li>seven</li>
+		<li>eight</li>
+		<li>nine</li>
+	</ul>
+</body>
+</html>

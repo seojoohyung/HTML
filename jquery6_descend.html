@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<style type="text/css">
+	
+	</style>
+	<script type="text/javascript" src="../../js/jquery-3.6.0.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			//첫번쨰 li에 노란색 넣기
+			//$("li:first")
+			$("li").first().css("background-color","yellow");
+			
+			//각리스트의 첫번쨰 li에 빨간색 테두리 넣기 
+// 			$("li:first-child").css("border","3px solid red");
+			$("ol li:first-child").css("border","3px solid red");
+			
+			//각 리스트의 마지막 li에 점 테두리 
+			$("ol li:last-child").css("border","3px dotted");
+			//아래 리스트 마지막만 배결 초록색 
+			
+			$("body ol:last-child li:last-child").css("border","3px dotted");
+			
+			
+		});
+	</script>
+</head>
+<body>
+	<p>여자들에게 인기 있는 남자</p>
+		<ol>
+			<li>1.능력있는 남자</li>
+			<li>2.돈 많은 남자</li>
+			<li>3.프로그래머</li>
+		</ol>	
+	<br>
+	<p>남자들에게 인기 있는 여자</p>
+		<ol>
+			<li>1.능력</li>
+			<li>2.얼굴</li>
+			<li>3.프로그래머</li>
+		</ol>	
+</body>
+</html>

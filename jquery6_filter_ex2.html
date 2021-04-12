@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<style type="text/css">
+		div{
+			width: 500px;
+			height: 30px;
+			border: 1px solid green;
+		}
+	</style>
+	<script type="text/javascript" src="../../js/jquery-3.6.0.js"></script>
+	<script type="text/javascript">
+		//jQuery 글자 포함된 span 테두리 파랑 
+		$("span:contains(jQuery)").css("border","1px solid blue");
+		//jQuery 글자 포함 안 된 span 테두리 빨강 
+		$("span:not(:contains(jQuery))").css("border","1px solid red");
+		//span을 갖는 얖 
+		
+	</script>
+</head>
+<body>ㅈ
+	<div></div><br>
+	<div>
+		헬로우~
+		<span>오늘도 즐겁게 ~ 열심히!</span>
+	</div><br>
+	<p>
+		Hello jQuery!
+		<span>Thanks, jQuery!</span>
+	</p><br>
+	<div>jQuery!</div>
+	<span>쉬운 jQuery~~!</span><br>
+	<div></div><br>
+	<hr color="blue"><br>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<style type="text/css">
+	
+	</style>
+	<script type="text/javascript" src="../../js/jquery-3.6.0.js"></script>
+	<script type="text/javascript">
+	
+// 		$("td:nth-child(3n-2)").css("backgroound-color","#888888");
+// 		$("td:nth-child(3n-1)").css("backgroound-color","#AAAAAA");
+// 		$("td:nth-child(3n)").css("backgroound-color","#CCCCCC");
+	
+// 		$("td:nth-child(3n)").css("backgroound-color","#888888");
+// 		$("td:nth-child(3n)").css("backgroound-color","#AAAAAA");
+// 		$("td:nth-child(3n)").css("backgroound-color","#CCCCCC");
+
+		
+		$("td:nth-child(1)").css("backgroound-color","#888888");
+		$("td:nth-child(2)").css("backgroound-color","#AAAAAA");
+		$("td:nth-child(3)").css("backgroound-color","#CCCCCC");
+		
+// 		$("tr").first().css("background-color","#000000")
+// 			.css("color","#FFFFFF");
+		//=> tr위에 td가 올라가 있고 td에 색상이 있어서 적용되지 않음 
+		//=> 첫번쨰 td에 색상을 적용해 두기
+		$("tr:first-child")
+
+
+	</script>
+</head>
+<body>
+	<table>
+		<tr>
+			<td>이름</td>
+			<td>지역</td>
+			<td>번호</td>
+		</tr>
+		<tr>
+			<td>홍</td>
+			<td>대전</td>
+			<td>042</td>
+		</tr>
+		<tr>
+			<td>길</td>
+			<td>서울</td>
+			<td>02</td>
+		</tr>
+		<tr>
+			<td>동</td>
+			<td>부산</td>
+			<td>051</td>
+		</tr>
+	</table>
+</body>
+</html>
